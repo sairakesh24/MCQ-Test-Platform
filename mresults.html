@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <!DOCTYPE html>
+<html>
+  <head>
+    <title>MCQs Example</title>
+  </head>
+  <body>
+    <h1>MCQs Example</h1>
+    <form id="quiz-form">
+      <h2>Question 1:</h2>
+      <p>What is the capital city of France?</p>
+      <label><input type="radio" name="q1" value="a">A. London</label><br>
+      <label><input type="radio" name="q1" value="b">B. Madrid</label><br>
+      <label><input type="radio" name="q1" value="c">C. Paris</label><br>
+
+      <h2>Question 2:</h2>
+      <p>What is the highest mountain in the world?</p>
+      <label><input type="radio" name="q2" value="a">A. Mount Everest</label><br>
+      <label><input type="radio" name="q2" value="b">B. K2</label><br>
+      <label><input type="radio" name="q2" value="c">C. Mount Kilimanjaro</label><br>
+      
+      <h2>Question 3:</h2>
+      <p>What is the largest ocean in the world?</p>
+      <label><input type="radio" name="q3" value="a">A. Atlantic Ocean</label><br>
+      <label><input type="radio" name="q3" value="b">B. Indian Ocean</label><br>
+      <label><input type="radio" name="q3" value="c">C. Pacific Ocean</label><br>
+
+      <br>
+      <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+    <div id="quiz-results" style="display: none;">
+      <h2>Quiz Results:</h2>
+      <p>Your score is <span id="score"></span> out of 3.</p>
+
+      <h3>Correct Answers:</h3>
+      <ul id="correct-answers">
+        <li>Question 1: C. Paris</li>
+        <li>Question 2: A. Mount Everest</li>
+        <li>Question 3: C. Pacific Ocean</li>
+      </ul>
+    </div>
+
+    <script>
+      function checkAnswers() {
+        const form = document.getElementById('quiz-form');
+        const results = document.getElementById('quiz-results');
+        const score = document.getElementById('score');
+
+        let numCorrect = 0;
+
+        // Check the answers for each question
+        if (form.q1.value === 'c') {
+          numCorrect++;
+        }
+
+        if (form.q2.value === 'a') {
+          numCorrect++;
+        }
+
+        if (form.q3.value === 'c') {
+          numCorrect++;
+        }
+
+        // Hide the quiz form and show the results
+        form.style.display = 'none';
+        results.style.display = 'block';
+
+        // Display the score
+        score.innerText = numCorrect;
+
+        // Scroll to the top of the page to show the results
+        window.scrollTo(0, 0);
+      }
+    </script>
+  </body>
+</html>

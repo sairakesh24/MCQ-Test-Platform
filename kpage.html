@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Test Form</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style>
+		body {
+			background-color: #F5F5F5;
+		}
+		h2 {
+			color: #007bff;
+			text-align: center;
+			margin-top: 40px;
+		}
+		form {
+			background-color: #fff;
+			padding: 20px;
+			margin-top: 30px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+			max-width: 400px;
+			margin: 0 auto;
+		}
+		input[type="text"], input[type="password"] {
+			border: none;
+			border-radius: 3px;
+			padding: 10px;
+			width: 100%;
+			margin-bottom: 20px;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+		}
+		input[type="submit"] {
+			background-color: #007bff;
+			border: none;
+			border-radius: 3px;
+			color: #fff;
+			padding: 10px;
+			width: 100%;
+			margin-bottom: 20px;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #0069d9;
+		}
+	</style>
+</head>
+<body>
+<center>
+	<h1>Create a New Test</h1>
+	</center>
+	<form action="create_test.php" method="post">
+		<label for="question_type">Question Type:</label>
+		<select id="question_type" name="question_type">
+			<option value="mcqs">MCQs</option>
+			<option value="descriptive">Descriptive Questions</option>
+		</select>
+		<br>
+		<label for="num_questions">Number of Questions:</label>
+		<input type="number" id="num_questions" name="num_questions">
+		<br>
+		<label for="duration">Duration (in minutes):</label>
+		<input type="number" id="duration" name="duration">
+		<br>
+		
+	</form>
+	<form method="POST" action="mresults.html"><input type="submit" name="submit" value="Submit"/></form>
+</body>
+</html>
